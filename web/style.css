@@ -5,4 +5,29 @@
 
 .vestacp-mail-list > .l-unit:first-child {
     background: #efefef;
+    border-bottom: 1px solid #c3c3c3;
+}
+
+.vestacp-mail-list > .l-unit:first-child .l-unit__date {
+    padding-bottom: 5px;
+}
+
+.vestacp-mail-list > .l-unit:first-child .favorite {
+    padding-bottom: 17px;
+}
+
+.vestacp-mail-list > .l-unit .suspended {
+    visibility: hidden;
+}
+
+.vestacp-mail-list > .l-unit.l-unit--suspended .suspended {
+    visibility: visible;
+}
+
+.vestacp-mail-list > .l-unit.l-unit--suspended:first-child .l-unit__name {
+    color: #ADADAD;
+}
+
+.vestacp-mail-list > .l-unit:first-child .l-unit__name {
+    color: #ff6701;
 }

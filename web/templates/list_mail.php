@@ -92,8 +92,6 @@ sort-accounts="<?=$data[$key]['ACCOUNTS']?>" sort-star="<? if($_SESSION['favouri
                 </a>
                 <span class="shortcut">&nbsp;S</span>
               </div>
-
-
             </div>
             <!-- /.actiona-panel -->
           </div>
@@ -105,85 +103,18 @@ sort-accounts="<?=$data[$key]['ACCOUNTS']?>" sort-star="<? if($_SESSION['favouri
           <div class="l-unit__date">
             <?=translate_date($data[$key]['DATE'])?>
           </div>
-          <div class="l-unit__suspended"><?=__('suspended')?></div>
-          <div class="text-center">
+          <div class="text-center favorite">
             <i class="l-icon-star" title="<?=__('save to favorites')?>"></i>
           </div>
         </div>
         <!-- /.l-unit__col -->
         <div class="l-unit__col l-unit__col--right">
           <div class="l-unit__name separate">
-            <?=$key?> <? if($data[$key]['ACCOUNTS']) echo '<span>/ '.$data[$key]['ACCOUNTS'].'</span>';?>
+            <?=$key?> <? if($data[$key]['ACCOUNTS']) echo '<span>'.$data[$key]['ACCOUNTS'].' '.__('Accounts').'</span>';?>
+            <span><?=__('Disk')?> <b><?=humanize_usage_size($data[$key]['U_DISK'])?></b> <?=humanize_usage_measure($data[$key]['U_DISK'])?></span>
+            <span class="suspended"><?=__('suspended')?></span>
           </div>
           <!-- /.l-unit__name -->
-          <div class="l-unit__stats">
-            <table>
-              <tr>
-                <td>
-                  <div class="l-unit__stat-cols clearfix graph">
-                    <div class="l-unit__stat-col l-unit__stat-col--left">
-                      <?=__('Disk')?>
-                    </div>
-                    <div class="l-unit__stat-col l-unit__stat-col--right text-right volume">
-                      <b><?=humanize_usage_size($data[$key]['U_DISK'])?></b> <?=humanize_usage_measure($data[$key]['U_DISK'])?>
-                    </div>
-                  </div>
-                  <div class="l-percent">
-                    <div class="l-percent__fill" style="width: <?=get_percentage($data[$key]['U_DISK'],$panel[$user]['DISK_QUOTA'])?>%"></div>
-                  </div>
-                  <!-- /.percent -->
-                </td>
-                <td>
-                  <? if($data[$key]['ANTIVIRUS'] == 'no'){ ?>
-                    <div class="l-unit__stat-cols clearfix disabled"><?=__('AntiVirus Support')?></div>
-                  <? } else {?>
-                    <div class="l-unit__stat-cols clearfix">
-                      <div class="l-unit__stat-col l-unit__stat-col--left"><?=__('AntiVirus Support')?>:</div>
-                      <div class="l-unit__stat-col l-unit__stat-col--right">
-                        <b><?=__($data[$key]['ANTIVIRUS'])?></b>
-                      </div>
-                    </div>
-                  <? } ?>
-                </td>
-                <td>
-                  <? if($data[$key]['ANTISPAM'] == 'no'){ ?>
-                    <div class="l-unit__stat-cols clearfix disabled"><?=__('AntiSpam Support')?></div>
-                  <? } else {?>
-                    <div class="l-unit__stat-cols clearfix">
-                      <div class="l-unit__stat-col l-unit__stat-col--left"><?=__('AntiSpam Support')?>:</div>
-                      <div class="l-unit__stat-col l-unit__stat-col--right">
-                        <b><?=__($data[$key]['ANTISPAM'])?></b>
-                      </div>
-                    </div>
-                  <? } ?>
-                </td>
-              </tr>
-              <tr>
-                <td></td>
-                <td>
-                  <? if($data[$key]['DKIM'] == 'no'){ ?>
-                    <div class="l-unit__stat-cols clearfix disabled"><?=__('DKIM Support')?></div>
-                  <? } else {?>
-                    <div class="l-unit__stat-cols clearfix">
-                      <div class="l-unit__stat-col l-unit__stat-col--left"><?=__('DKIM Support')?>:</div>
-                      <div class="l-unit__stat-col l-unit__stat-col--right">
-                        <b><?=__($data[$key]['DKIM'])?></b>
-                      </div>
-                    </div>
-                  <? } ?>
-                </td>
-                <td>
-                  <div class="l-unit__stat-cols clearfix last">
-                    <div class="l-unit__stat-col l-unit__stat-col--left"><?=__('Catchall email')?>:</div>
-                    <div class="l-unit__stat-col l-unit__stat-col--right">
-                      <b><?=$data[$key]['CATCHALL']?></b>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-            </table>
-          </div>
-          <!-- /.l-unit__stats -->
         </div>
         <!-- /.l-unit__col -->
 
