@@ -3,6 +3,10 @@
     margin-bottom: 50px;
 }
 
+.vestacp-mail-list:not(.units-block-1)::before {
+    height: 0 !important;
+}
+
 .vestacp-mail-list > .l-unit:first-child {
     background: #efefef;
     border-bottom: 1px solid #c3c3c3;

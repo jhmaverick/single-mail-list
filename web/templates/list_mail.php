@@ -70,7 +70,7 @@
           }
       ?>
 
-    <div class="l-center units vestacp-mail-list">
+    <div class="l-center units vestacp-mail-list <?= "units-block-$i" ?>">
 
       <div class="l-unit <? if($status == 'suspended') echo 'l-unit--suspended'; if($_SESSION['favourites']['MAIL'][$key] == 1) echo ' l-unit--starred'; ?>" v_unit_id="<?=$key?>" v_section="mail"
 sort-date="<?=strtotime($data[$key]['DATE'].' '.$data[$key]['TIME'])?>" sort-name="<?=$key?>" sort-disk="<?=$data[$key]['U_DISK']?>"
