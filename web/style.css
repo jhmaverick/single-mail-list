@@ -1,0 +1,8 @@
+.l-center.units.vestacp-mail-list {
+    background: #FFF;
+    margin-bottom: 50px;
+}
+
+.vestacp-mail-list > .l-unit:first-child {
+    background: #efefef;
+}
