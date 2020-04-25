@@ -1,7 +1,10 @@
-    <link rel="stylesheet" href="/plugins/vestacp-mail-list/style.css"/>
+<?php if (!class_exists('Vesta')) exit; ?>
+    <link rel="stylesheet" href="/plugin/single-mail-list/style.css"/>
 
     <div class="l-center">
       <div class="l-sort clearfix noselect">
+          <a href="/edit/mail/" class="l-sort__create-btn edit" title="<?=__('Mail Manager')?>"></a>
+
         <div class="l-sort-toolbar clearfix">
           <table>
             <tr>
@@ -12,7 +15,6 @@
                   if (!empty($_SESSION['MAIL_URL'])) $webmail = $_SESSION['MAIL_URL'];
                 ?>
                 <a class="vst" href="<?=$webmail?>" target="_blank"><?=__('open webmail')?> <i></i></a>
-                <a class="vst" href="/list/mail/"><?=__('Mail Domain Manager')?> <i></i></a>
               </td>
               <td class="l-sort-toolbar__search-box step-left">
                 <form action="/search/" method="get">
@@ -26,7 +28,7 @@
                 <label for="toggle-all" class="check-label toggle-all"><?=__('toggle all')?></label>
               </td>
               <td>
-                <form action="/plugins/vestacp-mail-list/bulk.php" method="post" id="objects">
+                <form action="/plugin/single-mail-list/bulk.php" method="post" id="objects">
                 <input type="hidden" name="token" value="<?=$_SESSION['token']?>" />
                 <div class="l-select">
                   <select name="action" id="">
@@ -70,7 +72,7 @@
           }
       ?>
 
-    <div class="l-center units vestacp-mail-list <?= "units-block-$i" ?>">
+    <div class="l-center units single-mail-list <?= "units-block-$i" ?>">
 
       <div class="l-unit <? if($status == 'suspended') echo 'l-unit--suspended'; if($_SESSION['favourites']['MAIL'][$key] == 1) echo ' l-unit--starred'; ?>" v_unit_id="<?=$key?>" v_section="mail"
 sort-date="<?=strtotime($data[$key]['DATE'].' '.$data[$key]['TIME'])?>" sort-name="<?=$key?>" sort-disk="<?=$data[$key]['U_DISK']?>"

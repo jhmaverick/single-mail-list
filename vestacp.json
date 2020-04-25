@@ -1,0 +1,13 @@
+{
+  "name": "single-mail-list",
+  "description": "List domains and mail accounts on the same page.",
+  "version": "0.1.0",
+  "min-vesta": "0.9.8",
+  "repository": "https://github.com/jhmaverick/single-mail-list",
+  "homepage": "https://github.com/jhmaverick/single-mail-list#readme",
+  "author": {
+    "name": "João Henrique",
+    "email": "joao_henriquee@outlook.com",
+    "homepage": "https://github.com/jhmaverick/"
+  }
+}

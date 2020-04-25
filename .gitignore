@@ -1,0 +1,17 @@
+### Docker
+/.env
+/data/
+/docker-compose.override.yml
+
+### Composer
+/composer.phar
+/**/vendor/
+
+### Node NPM
+/**/node_modules/
+
+### JetBrains
+/.idea/
+
+### Não organizados
+

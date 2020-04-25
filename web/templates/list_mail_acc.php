@@ -1,3 +1,4 @@
+<?php if (!class_exists('Vesta')) exit; ?>
       <?
         foreach ($data as $key => $value) {
           ++$i;
